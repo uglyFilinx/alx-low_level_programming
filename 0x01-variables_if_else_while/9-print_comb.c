@@ -9,20 +9,11 @@ int main(void)
 {
 	int n = '0';
 	int a_to_f = 'a';
-	int comma = ',';
-	int whitespace = ' ';
 
-	while (n != '9')
+	while (n <= '9') /*print 0-9*/
 	{
 		putchar(n);
-		if (number == '9')
-		{
-			break;
-		}
-
-		putchar(comma);
-		putchar(whitespace);
-	
+		n++;
 	}
 
 	while (a_to_f <= 'f') /*print a-f to finish hexbase*/
