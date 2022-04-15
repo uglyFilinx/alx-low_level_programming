@@ -1,5 +1,4 @@
-table File  31 lines (28 sloc)  348 Bytes
-#include "main.h"
+include "main.h"
 
 /**
  *print_diagonal - draws a diagonal line on the terminal.
