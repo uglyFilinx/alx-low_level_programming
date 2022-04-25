@@ -1,34 +1,28 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- *_strncat - two words
- *@dest : pointer to char param
- *@src : pointer to char param
- *@n : int parameter
- *Return: *dest
+ *rot13 - encoder rot13
+ *@s: pointer to string params
+ *
+ *Return: *s
  */
-
-char *_strncat(char *dest, char *src, int n)
+char *rot13(char *s)
 {
-	int m;
 	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	m = 0;
-
-	for (i = 0; i < 1000; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (dest[i] == '\0')
+		for (j = 0; j < 52; j++)
 		{
-			break;
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
-		m++;
 	}
-
-	for (i = 0; src[i] != '\0' && i < n; i++)
-	{
-		dest[m + i] = src[i];
-	}
-	dest[m + i] = '\0';
-	return (dest);
+	return (s);
 }
